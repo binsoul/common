@@ -8,14 +8,14 @@ namespace BinSoul\Common;
 class Dictionary implements \ArrayAccess
 {
     /** @var mixed[] */
-    protected $data;
+    private $data;
 
     /**
      * Constructs an instance of this class.
      *
      * @param mixed[] $data initial data
      */
-    public function __construct($data)
+    public function __construct(array $data = [])
     {
         $this->data = $data;
     }
