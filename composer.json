@@ -1,9 +1,6 @@
 {
     "name": "binsoul/common",
     "description": "Common classes, traits and interfaces",
-    "keywords": [
-        "net"
-    ],
     "homepage": "https://github.com/binsoul/common",
     "license": "MIT",
     "authors": [
