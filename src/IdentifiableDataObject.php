@@ -18,7 +18,7 @@ trait IdentifiableDataObject
      * Constructs an instance of this class.
      *
      * @param int|string|null $id
-     * @param mixed[]    $data
+     * @param mixed[]         $data
      */
     public function __construct($id, array $data)
     {
