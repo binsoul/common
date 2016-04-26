@@ -1,5 +1,7 @@
 <?php
 
+declare (strict_types = 1);
+
 namespace BinSoul\Common;
 
 /**
@@ -12,5 +14,5 @@ interface Nullable
      *
      * @return bool
      */
-    public function exists();
+    public function exists(): bool;
 }

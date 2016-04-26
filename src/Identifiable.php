@@ -1,5 +1,7 @@
 <?php
 
+declare (strict_types = 1);
+
 namespace BinSoul\Common;
 
 /**
@@ -21,5 +23,5 @@ interface Identifiable
      *
      * @return bool
      */
-    public function isSameAs(Identifiable $other);
+    public function isSameAs(Identifiable $other): bool;
 }

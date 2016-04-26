@@ -1,5 +1,7 @@
 <?php
 
+declare (strict_types = 1);
+
 namespace BinSoul\Common;
 
 /**
@@ -51,7 +53,7 @@ trait DataObject
      *
      * @return bool
      */
-    public function hasData($key)
+    public function hasData(string $key): bool
     {
         return array_key_exists($key, $this->objectData);
     }
@@ -61,7 +63,7 @@ trait DataObject
      *
      * @return string
      */
-    public function getHash()
+    public function getHash(): string
     {
         return md5(serialize($this->getData()));
     }

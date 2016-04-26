@@ -1,5 +1,7 @@
 <?php
 
+declare (strict_types = 1);
+
 namespace BinSoul\Common;
 
 /**
@@ -27,7 +29,7 @@ class Dictionary implements \ArrayAccess
      *
      * @return bool
      */
-    public function has($key)
+    public function has(string $key): bool
     {
         if (!array_key_exists($key, $this->data)) {
             return false;
@@ -44,7 +46,7 @@ class Dictionary implements \ArrayAccess
      *
      * @return mixed
      */
-    public function get($key, $default = null)
+    public function get(string $key, $default = null)
     {
         if (!array_key_exists($key, $this->data)) {
             return $default;
@@ -59,7 +61,7 @@ class Dictionary implements \ArrayAccess
      * @param string $key   name of the entry
      * @param mixed  $value value of the entry
      */
-    public function set($key, $value)
+    public function set(string $key, $value)
     {
         $this->data[$key] = $value;
     }
@@ -69,7 +71,7 @@ class Dictionary implements \ArrayAccess
      *
      * @param string $key name of the entry
      */
-    public function remove($key)
+    public function remove(string $key)
     {
         unset($this->data[$key]);
     }
@@ -79,7 +81,7 @@ class Dictionary implements \ArrayAccess
      *
      * @return string[]
      */
-    public function keys()
+    public function keys(): array
     {
         return array_keys($this->data);
     }
@@ -89,7 +91,7 @@ class Dictionary implements \ArrayAccess
      *
      * @return string[]
      */
-    public function values()
+    public function values(): array
     {
         return array_values($this->data);
     }
@@ -99,7 +101,7 @@ class Dictionary implements \ArrayAccess
      *
      * @return mixed[]
      */
-    public function all()
+    public function all(): array
     {
         return $this->data;
     }

@@ -1,5 +1,7 @@
 <?php
 
+declare (strict_types = 1);
+
 namespace BinSoul\Common;
 
 /**
@@ -32,7 +34,7 @@ trait PropertyGenerator
      *
      * @return mixed
      */
-    public function __get($key)
+    public function __get(string $key)
     {
         if (array_key_exists($key, $this->objectData)) {
             $this->{$key} = $this->objectData[$key];
@@ -47,7 +49,7 @@ trait PropertyGenerator
      * @param string $key
      * @param mixed  $value
      */
-    public function __set($key, $value)
+    public function __set(string $key, $value)
     {
         if (property_exists($this, $key)) {
             throw new \InvalidArgumentException(sprintf('The property "%s" is not public.', $key));
@@ -65,7 +67,7 @@ trait PropertyGenerator
      *
      * @return \ReflectionProperty[]
      */
-    protected function getGeneratedProperties()
+    protected function getGeneratedProperties(): array
     {
         $reflectionObject = new \ReflectionObject($this);
         $properties = $reflectionObject->getProperties(\ReflectionProperty::IS_PUBLIC);

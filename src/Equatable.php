@@ -1,5 +1,7 @@
 <?php
 
+declare (strict_types = 1);
+
 namespace BinSoul\Common;
 
 /**
@@ -12,7 +14,7 @@ interface Equatable
      *
      * @return string
      */
-    public function getHash();
+    public function getHash(): string;
 
     /**
      * Indicates whether some other object is equal to this one.
@@ -21,5 +23,5 @@ interface Equatable
      *
      * @return bool
      */
-    public function isEqualTo(Equatable $other);
+    public function isEqualTo(Equatable $other): bool;
 }

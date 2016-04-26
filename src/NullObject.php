@@ -1,5 +1,7 @@
 <?php
 
+declare (strict_types = 1);
+
 namespace BinSoul\Common;
 
 /**
@@ -9,7 +11,7 @@ namespace BinSoul\Common;
  */
 trait NullObject
 {
-    public function exists()
+    public function exists(): bool
     {
         return false;
     }
@@ -17,7 +19,7 @@ trait NullObject
     /**
      * @param string $key
      */
-    public function __get($key)
+    public function __get(string $key)
     {
         return;
     }
@@ -26,7 +28,7 @@ trait NullObject
      * @param string $key
      * @param mixed  $value
      */
-    public function __set($key, $value)
+    public function __set(string $key, $value)
     {
         return;
     }
@@ -36,7 +38,7 @@ trait NullObject
      *
      * @return bool
      */
-    public function __isset($key)
+    public function __isset(string $key)
     {
         return false;
     }
@@ -44,7 +46,7 @@ trait NullObject
     /**
      * @param string $key
      */
-    public function __unset($key)
+    public function __unset(string $key)
     {
         return;
     }
@@ -55,7 +57,7 @@ trait NullObject
      * @param string  $method
      * @param mixed[] $arguments
      */
-    public function __call($method, $arguments)
+    public function __call(string $method, $arguments)
     {
         return;
     }
@@ -68,7 +70,7 @@ trait NullObject
     /**
      * @return bool
      */
-    protected function returnTrue()
+    protected function returnTrue(): bool
     {
         return true;
     }
@@ -76,7 +78,7 @@ trait NullObject
     /**
      * @return bool
      */
-    protected function returnFalse()
+    protected function returnFalse(): bool
     {
         return false;
     }
@@ -84,15 +86,15 @@ trait NullObject
     /**
      * @return string
      */
-    protected function returnString()
+    protected function returnString(): string
     {
         return '';
     }
 
     /**
-     * @return string
+     * @return int
      */
-    protected function returnZero()
+    protected function returnZero(): int
     {
         return 0;
     }
@@ -100,7 +102,7 @@ trait NullObject
     /**
      * @return array
      */
-    protected function returnArray()
+    protected function returnArray(): array
     {
         return [];
     }

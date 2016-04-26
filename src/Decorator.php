@@ -1,5 +1,7 @@
 <?php
 
+declare (strict_types = 1);
+
 namespace BinSoul\Common;
 
 /**
@@ -53,8 +55,10 @@ trait Decorator
      * Returns the property of the decorated object.
      *
      * @param string $key
+     *
+     * @return mixed
      */
-    public function __get($key)
+    public function __get(string $key)
     {
         return $this->decoratedObject->{$key};
     }
@@ -65,7 +69,7 @@ trait Decorator
      * @param string $key
      * @param mixed  $value
      */
-    public function __set($key, $value)
+    public function __set(string $key, $value)
     {
         $this->decoratedObject->{$key} = $value;
     }
@@ -77,7 +81,7 @@ trait Decorator
      *
      * @return bool
      */
-    public function __isset($key)
+    public function __isset(string $key): bool
     {
         return isset($this->decoratedObject->{$key});
     }
@@ -87,7 +91,7 @@ trait Decorator
      *
      * @param string $key
      */
-    public function __unset($key)
+    public function __unset(string $key)
     {
         unset($this->decoratedObject->{$key});
     }
@@ -100,7 +104,7 @@ trait Decorator
      *
      * @return mixed
      */
-    public function __call($method, $arguments)
+    public function __call(string $method, array $arguments)
     {
         return call_user_func_array([$this->decoratedObject, $method], $arguments);
     }

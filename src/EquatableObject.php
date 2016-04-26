@@ -1,5 +1,7 @@
 <?php
 
+declare (strict_types = 1);
+
 namespace BinSoul\Common;
 
 /**
@@ -7,12 +9,12 @@ namespace BinSoul\Common;
  */
 trait EquatableObject
 {
-    public function getHash()
+    public function getHash(): string
     {
         return md5(serialize($this));
     }
 
-    public function isEqualTo(Equatable $other)
+    public function isEqualTo(Equatable $other): bool
     {
         return $this->getHash() == $other->getHash();
     }

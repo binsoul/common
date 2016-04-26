@@ -1,5 +1,7 @@
 <?php
 
+declare (strict_types = 1);
+
 namespace BinSoul\Common;
 
 /**
@@ -28,7 +30,7 @@ trait IdentifiableDataObject
         unset($this->objectData['id']);
     }
 
-    public function __get($key)
+    public function __get(string $key)
     {
         if ($key == 'id') {
             $this->id = $this->objectId;
@@ -43,7 +45,7 @@ trait IdentifiableDataObject
         throw new \InvalidArgumentException(sprintf('The property "%s" is not defined.', $key));
     }
 
-    public function __set($key, $value)
+    public function __set(string $key, $value)
     {
         if ($key == 'id') {
             $this->objectId = $value;
